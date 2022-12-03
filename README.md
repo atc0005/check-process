@@ -429,7 +429,7 @@ been exceeded.
 
 ```console
 $ ./check_process
-CRITICAL: Problematic processes found (D (disk sleep) [2], R (running) [7], S (sleeping) [368], evaluated [377])
+CRITICAL: 2 problematic processes found (D (disk sleep) [2], R (running) [7], S (sleeping) [368], evaluated [377])
 
 Process Summary:
 
