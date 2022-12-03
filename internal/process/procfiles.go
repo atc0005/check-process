@@ -10,6 +10,7 @@ package process
 import (
 	"bufio"
 	"bytes"
+	"errors"
 	"fmt"
 	"io"
 	"os"
@@ -164,4 +165,42 @@ func getProcessProperties(r io.Reader) (Process, error) {
 
 	return process, nil
 
+}
+
+// FromProcDirs evaluates the status file within a given list of /proc/[pid]
+// directories and returns either a collection of Process values or an error
+// if one occurs.
+func FromProcDirs(procDirs []string) (Processes, error) {
+	processes := make(Processes, 0, len(procDirs))
+	for _, procDir := range procDirs {
+
+		qualifiedPath := filepath.Join(ProcRootDir, procDir, ProcStatusFilename)
+		p, err := ParseProcStatusFile(qualifiedPath)
+		if err != nil {
+			switch {
+			case errors.Is(err, os.ErrNotExist):
+				// open /proc/22991/status: no such file or directory
+				//
+				// This is commonly encountered for short lived processes; we
+				// see the process directory when initially listing process
+				// directories within the proc filesystem, but then don't find
+				// it again when we attempt to parse the status file within
+				// each subdirectory. In order to prevent erroring out over
+				// short-lived processes we skip to the next item to evaluate.
+				continue
+
+			default:
+				return nil, fmt.Errorf(
+					"fatal error encountered processing proc status file %s: %w",
+					qualifiedPath,
+					err,
+				)
+			}
+		}
+
+		processes = append(processes, p)
+
+	}
+
+	return processes, nil
 }
