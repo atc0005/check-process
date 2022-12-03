@@ -11,7 +11,6 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"path/filepath"
 	"time"
 
 	"github.com/atc0005/check-process/internal/config"
@@ -112,30 +111,18 @@ func main() {
 		Int("process_paths", len(procDirs)).
 		Msg("Successfully collected process paths")
 
-	processes := make(process.Processes, 0, len(procDirs))
-	for _, procDir := range procDirs {
+	processes, err := process.FromProcDirs(procDirs)
+	if err != nil {
+		logger.Error().Err(err).Msg("Failed to obtain list of process values")
 
-		qualifiedPath := filepath.Join(process.ProcRootDir, procDir, process.ProcStatusFilename)
-		p, err := process.ParseProcStatusFile(qualifiedPath)
-		if err != nil {
-			logger.Error().
-				Err(err).
-				Str("file", qualifiedPath).
-				Msg("Failed to process file")
+		nagiosExitState.AddError(err)
+		nagiosExitState.ExitStatusCode = nagios.StateCRITICALExitCode
+		nagiosExitState.ServiceOutput = fmt.Sprintf(
+			"%s: Failed to process proc status files",
+			nagios.StateCRITICALLabel,
+		)
 
-			nagiosExitState.AddError(err)
-			nagiosExitState.ExitStatusCode = nagios.StateCRITICALExitCode
-			nagiosExitState.ServiceOutput = fmt.Sprintf(
-				"%s: Failed to process proc status file %s",
-				nagios.StateCRITICALLabel,
-				qualifiedPath,
-			)
-
-			return
-		}
-
-		processes = append(processes, p)
-
+		return
 	}
 
 	logger.Debug().

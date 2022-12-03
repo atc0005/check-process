@@ -11,7 +11,6 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"path/filepath"
 
 	"github.com/atc0005/check-process/internal/config"
 	"github.com/atc0005/check-process/internal/process"
@@ -61,21 +60,10 @@ func main() {
 		Int("process_paths", len(procDirs)).
 		Msg("Successfully collected process paths")
 
-	processes := make(process.Processes, 0, len(procDirs))
-	for _, procDir := range procDirs {
-
-		qualifiedPath := filepath.Join(process.ProcRootDir, procDir, process.ProcStatusFilename)
-		p, err := process.ParseProcStatusFile(qualifiedPath)
-		if err != nil {
-			logger.Error().
-				Err(err).
-				Str("file", qualifiedPath).
-				Msg("Failed to process file")
-			os.Exit(config.ExitCodeCatchall)
-		}
-
-		processes = append(processes, p)
-
+	processes, err := process.FromProcDirs(procDirs)
+	if err != nil {
+		logger.Error().Err(err).Msg("Failed to obtain list of process values")
+		os.Exit(config.ExitCodeCatchall)
 	}
 
 	logger.Debug().
