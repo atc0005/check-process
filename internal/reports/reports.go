@@ -30,13 +30,14 @@ func CheckProcessOneLineSummary(processes process.Processes) string {
 		summaryList := processes.SummaryList()
 		summaryList = append(summaryList, fmt.Sprintf(
 			"evaluated [%d]",
-			probProcs.Count(),
+			processes.Count(),
 		))
 		procsSummary := strings.Join(summaryList, ", ")
 
 		summary = fmt.Sprintf(
-			"%s: Problematic processes found (%s)",
+			"%s: %d problematic processes found (%s)",
 			processes.ServiceState().Label,
+			probProcs.Count(),
 			procsSummary,
 		)
 
