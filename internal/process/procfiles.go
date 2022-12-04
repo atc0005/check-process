@@ -13,11 +13,24 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"io/fs"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
 )
+
+// getProcDirsCount is a small helper function to calculate the number of
+// directories from a given collection with valid process (ID pattern) names.
+func getProcDirsCount(dirEntries []fs.DirEntry, re *regexp.Regexp) int {
+	var ctr int
+	for _, path := range dirEntries {
+		if path.IsDir() && re.MatchString(path.Name()) {
+			ctr++
+		}
+	}
+	return ctr
+}
 
 // GetProcDirs evaluates the given base path (usually "/proc") for known
 // process directories within the proc filesystem and returns an unqualified
@@ -27,7 +40,7 @@ func GetProcDirs(path string) ([]string, error) {
 	// fixed and unlikely to be modified this should be a safe decision.
 	re := regexp.MustCompile(ProcDirRegex)
 
-	files, err := os.ReadDir(path)
+	dirEntries, err := os.ReadDir(path)
 	if err != nil {
 		return nil, fmt.Errorf(
 			"failed to evaluate processes using proc path %s: %w",
@@ -36,18 +49,9 @@ func GetProcDirs(path string) ([]string, error) {
 		)
 	}
 
-	procDirsCount := func() int {
-		var ctr int
-		for _, path := range files {
-			if path.IsDir() && re.MatchString(path.Name()) {
-				ctr++
-			}
-		}
-		return ctr
-	}()
-
+	procDirsCount := getProcDirsCount(dirEntries, re)
 	procDirs := make([]string, 0, procDirsCount)
-	for _, path := range files {
+	for _, path := range dirEntries {
 		if !path.IsDir() {
 			continue
 		}
