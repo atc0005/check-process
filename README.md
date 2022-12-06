@@ -76,7 +76,9 @@ writing Linux is the only supported OS
 - Optional, leveled logging using `rs/zerolog` package
   - JSON-format output (to `stderr`)
   - choice of `disabled`, `panic`, `fatal`, `error`, `warn`, `info` (the
-    default), `debug` or `trace`.
+    default), `debug` or `trace`
+
+NOTE: This tool ignores its own process entry when reporting running processes.
 
 ### `lsps` CLI tool
 
@@ -92,7 +94,9 @@ Small CLI tool to list processes with known problematic processes.
 - Optional, leveled logging using `rs/zerolog` package
   - JSON-format output (to `stderr`)
   - choice of `disabled`, `panic`, `fatal`, `error`, `warn`, `info` (the
-    default), `debug` or `trace`.
+    default), `debug` or `trace`
+
+NOTE: This tool ignores its own process entry when reporting running processes.
 
 ## Changelog
 

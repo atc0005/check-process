@@ -116,6 +116,16 @@ func main() {
 		Int("processes", len(processes)).
 		Msg("Collected info on processes")
 
+	logger.Debug().
+		Str("my_name", os.Args[0]).
+		Int("my_process_id", os.Getpid()).
+		Msg("Excluding process of current tool")
+	processes = processes.ExcludeMyPID()
+
+	logger.Debug().
+		Int("processes", len(processes)).
+		Msg("Excluded process of current tool")
+
 	switch {
 	case !processes.IsOKState():
 
