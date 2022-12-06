@@ -5,7 +5,7 @@
 // Licensed under the MIT License. See LICENSE file in the project root for
 // full license information.
 
-// Small CLI tool to list processes with known problematic processes.
+// Small CLI tool to list processes with known problematic states.
 //
 // See our [GitHub repo]:
 //
