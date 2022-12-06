@@ -52,13 +52,12 @@ submit improvements for review and potential inclusion into the project.
 
 ## Overview
 
-This repo is intended to provide various tools used to detect whether a
-restart (service) or reboot (system) is needed.
+This repo is intended to provide various tools used to monitor processes.
 
-| Tool Name       | Overall Status | Description                                                        |
-| --------------- | -------------- | ------------------------------------------------------------------ |
-| `check_process` | Alpha          | Nagios plugin used to monitor for problematic process states.      |
-| `lsps`          | Alpha          | Small CLI tool to list processes with known problematic processes. |
+| Tool Name       | Overall Status | Description                                                     |
+| --------------- | -------------- | --------------------------------------------------------------- |
+| `check_process` | Alpha          | Nagios plugin used to monitor processes for problematic states. |
+| `lsps`          | Alpha          | Small CLI tool to list processes with known problematic states. |
 
 ## Features
 
