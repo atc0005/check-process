@@ -42,7 +42,7 @@ func listProcesses(w io.Writer, processes process.Processes) {
 // The summary is written to the specified io.Writer.
 func listOtherProcesses(w io.Writer, evaluated process.Processes, all process.Processes, includeDetails bool) {
 
-	remaining := all.Exclude(evaluated)
+	remaining := all.Exclude(evaluated...)
 
 	if len(remaining) == 0 {
 		return

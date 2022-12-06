@@ -9,6 +9,7 @@ package process
 
 import (
 	"fmt"
+	"os"
 	"sort"
 	"strings"
 
@@ -37,7 +38,7 @@ func (ps Processes) ParentProcess(p Process) (Process, error) {
 // Exclude returns Process values from the collection which are not in the
 // specified set. If the specified set is empty all Process values in the
 // collection are returned. If the
-func (ps Processes) Exclude(exclude Processes) Processes {
+func (ps Processes) Exclude(exclude ...Process) Processes {
 
 	// Build index of ID values the set we are to exclude.
 	excludePids := make(map[int]struct{}, len(exclude))
@@ -55,6 +56,35 @@ func (ps Processes) Exclude(exclude Processes) Processes {
 	for _, p := range ps {
 		_, excluded := excludePids[p.Pid]
 		if !excluded {
+			remaining = append(remaining, p)
+		}
+	}
+
+	return remaining
+}
+
+// MyProcess returns the Process value from the collection which matches the
+// current process ID value of the tool executing this code. A zero value
+// Process is returned if a match is not found for the current process ID
+// value.
+func (ps Processes) MyProcess() Process {
+	myPID := os.Getpid()
+	for _, p := range ps {
+		if p.Pid == myPID {
+			return p
+		}
+	}
+
+	return Process{}
+}
+
+// ExcludeMyPID returns Process values from the collection which do not match
+// the current process ID value of the tool executing this code.
+func (ps Processes) ExcludeMyPID() Processes {
+	myPID := os.Getpid()
+	remaining := make(Processes, 0)
+	for _, p := range ps {
+		if p.Pid != myPID {
 			remaining = append(remaining, p)
 		}
 	}
