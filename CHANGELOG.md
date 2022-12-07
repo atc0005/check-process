@@ -26,6 +26,30 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.1.1] - 2022-12-07
+
+### Overview
+
+- Bug fixes
+- Dependency updates
+- built using Go 1.19.4
+  - Statically linked
+  - Linux (x86, x64)
+
+### Changed
+
+- Dependencies
+  - `Go`
+    - `1.19.3` to `1.19.4`
+  - `golang.org/x/sys`
+    - `v0.2.0` to `v0.3.0`
+- (GH-26) Exclude process ID of running tool
+
+### Fixed
+
+- (GH-25) Minor refactoring to resolve gocognit warnings
+- (GH-27) Fix overview statements
+
 ## [v0.1.0] - 2022-12-03
 
 ### Overview
@@ -49,5 +73,6 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.1.1...HEAD
+[v0.1.1]: https://github.com/atc0005/check-process/releases/tag/v0.1.1
 [v0.1.0]: https://github.com/atc0005/check-process/releases/tag/v0.1.0
