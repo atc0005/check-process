@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/atc0005/go-nagios v0.13.0
-	github.com/rs/zerolog v1.28.0
+	github.com/rs/zerolog v1.29.0
 )
 
 require (
