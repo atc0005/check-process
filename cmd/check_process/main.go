@@ -73,10 +73,10 @@ func main() {
 		logger.Error().Err(err).Msg("Failed to evaluate process directories")
 
 		plugin.AddError(err)
-		plugin.ExitStatusCode = nagios.StateCRITICALExitCode
+		plugin.ExitStatusCode = nagios.StateUNKNOWNExitCode
 		plugin.ServiceOutput = fmt.Sprintf(
 			"%s: Failed to evaluate process directories",
-			nagios.StateCRITICALLabel,
+			nagios.StateUNKNOWNLabel,
 		)
 
 		return
@@ -92,10 +92,10 @@ func main() {
 		logger.Error().Err(err).Msg("Failed to obtain list of process values")
 
 		plugin.AddError(err)
-		plugin.ExitStatusCode = nagios.StateCRITICALExitCode
+		plugin.ExitStatusCode = nagios.StateUNKNOWNExitCode
 		plugin.ServiceOutput = fmt.Sprintf(
 			"%s: Failed to process proc status files",
-			nagios.StateCRITICALLabel,
+			nagios.StateUNKNOWNLabel,
 		)
 
 		return
