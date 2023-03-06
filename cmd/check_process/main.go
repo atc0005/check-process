@@ -115,6 +115,22 @@ func main() {
 		Int("processes", len(processes)).
 		Msg("Excluded process of current tool")
 
+	pd := getPerfData(processes)
+	if err := plugin.AddPerfData(false, pd...); err != nil {
+		logger.Error().
+			Err(err).
+			Msg("failed to add performance data")
+
+		// Surface the error in plugin output.
+		plugin.AddError(err)
+
+		plugin.ExitStatusCode = nagios.StateUNKNOWNExitCode
+		plugin.ServiceOutput = fmt.Sprintf(
+			"%s: Failed to process performance data metrics",
+			nagios.StateUNKNOWNLabel,
+		)
+	}
+
 	switch {
 	case !processes.IsOKState():
 
@@ -131,39 +147,16 @@ func main() {
 		plugin.ServiceOutput = reports.CheckProcessOneLineSummary(processes)
 		plugin.LongServiceOutput = reports.CheckProcessReport(processes)
 
-		pd := getPerfData(processes)
-		if err := plugin.AddPerfData(false, pd...); err != nil {
-			logger.Error().
-				Err(err).
-				Msg("failed to add performance data")
-
-			// Surface the error in plugin output.
-			plugin.AddError(err)
-
-			plugin.ExitStatusCode = nagios.StateUNKNOWNExitCode
-			plugin.ServiceOutput = fmt.Sprintf(
-				"%s: Failed to process performance data metrics",
-				nagios.StateUNKNOWNLabel,
-			)
-		}
-
 		return
 
 	default:
 
 		logger.Debug().Msg("No problematic processes detected")
 
-		plugin.ServiceOutput = reports.CheckProcessOneLineSummary(processes)
-		plugin.LongServiceOutput = reports.CheckProcessReport(processes)
-
 		plugin.ExitStatusCode = processes.ServiceState().ExitCode
 
-		pd := getPerfData(processes)
-		if err := plugin.AddPerfData(false, pd...); err != nil {
-			logger.Error().
-				Err(err).
-				Msg("failed to add performance data")
-		}
+		plugin.ServiceOutput = reports.CheckProcessOneLineSummary(processes)
+		plugin.LongServiceOutput = reports.CheckProcessReport(processes)
 
 		return
 
