@@ -26,6 +26,34 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.2.0] - 2023-03-07
+
+### Overview
+
+- Add support for generating packages
+- Generated binary changes
+  - filename patterns
+  - compression
+  - executable metadata
+- Build improvements
+- built using Go 1.19.6
+  - Statically linked
+  - Linux (x86, x64)
+
+### Added
+
+- (GH-53) Generate RPM/DEB packages using nFPM
+
+### Changed
+
+- (GH-52) Switch to semantic versioning (semver) compatible versioning
+  pattern
+- (GH-54) Add version metadata to Windows executables
+- (GH-55) Makefile: Compress binaries and use fixed filenames
+- (GH-56) Makefile: Refresh recipes to add "standard" set, new
+  package-related options
+- (GH-57) Build dev/stable releases using go-ci Docker image
+
 ## [v0.1.2] - 2023-03-07
 
 ### Overview
@@ -112,7 +140,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.2.0...HEAD
+[v0.2.0]: https://github.com/atc0005/check-process/releases/tag/v0.2.0
 [v0.1.2]: https://github.com/atc0005/check-process/releases/tag/v0.1.2
 [v0.1.1]: https://github.com/atc0005/check-process/releases/tag/v0.1.1
 [v0.1.0]: https://github.com/atc0005/check-process/releases/tag/v0.1.0
