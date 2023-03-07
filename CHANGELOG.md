@@ -26,6 +26,45 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.1.2] - 2023-03-07
+
+### Overview
+
+- Bug fixes
+- Dependency updates
+- GitHub Actions Workflow updates
+- built using Go 1.19.6
+  - Statically linked
+  - Linux (x86, x64)
+
+### Changed
+
+- Dependencies
+  - `Go`
+    - `1.19.4` to `1.19.6`
+  - `atc0005/go-nagios`
+    - `v0.10.2` to `v0.14.0`
+  - `rs/zerolog`
+    - `v1.28.0` to `v1.29.0`
+  - `golang.org/x/sys`
+    - `v0.3.0` to `v0.6.0`
+  - `mattn/go-isatty`
+    - `v0.0.16` to `v0.0.17`
+- GitHub Actions
+  - (GH-40) Add Go Module Validation, Dependency Updates jobs
+  - (GH-47) Drop `Push Validation` workflow
+  - (GH-48) Rework workflow scheduling
+  - (GH-50) Remove `Push Validation` workflow status badge
+
+### Fixed
+
+- (GH-35) Drop plugin runtime tracking, update library usage
+- (GH-41) Add missing Makefile usage entry for release build
+- (GH-59) Use UNKNOWN state for perfdata add failures
+- (GH-60) Use UNKNOWN state for invalid command-line args
+- (GH-61) Remove duplicate perfdata add step
+- (GH-62) Use UNKNOWN state for evaluation failures
+
 ## [v0.1.1] - 2022-12-07
 
 ### Overview
@@ -73,6 +112,7 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.1.2...HEAD
+[v0.1.2]: https://github.com/atc0005/check-process/releases/tag/v0.1.2
 [v0.1.1]: https://github.com/atc0005/check-process/releases/tag/v0.1.1
 [v0.1.0]: https://github.com/atc0005/check-process/releases/tag/v0.1.0
