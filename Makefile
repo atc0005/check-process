@@ -749,7 +749,7 @@ dev-build: clean linux-x64-dev-build packages-dev package-links linux-x64-dev-co
 
 .PHONY: release-build
 ## release-build: generates stable build assets for public release
-release-build: clean packages-dev clean-linux-x64-dev packages-stable linux-x64-compress linux-x64-checksums linux-x64-links package-links
+release-build: clean linux-x86 packages-dev clean-linux-x64-dev packages-stable linux-x64-compress linux-x64-checksums linux-x64-links package-links
 	@echo "Completed all tasks for stable release build"
 
 .PHONY: helper-docker-builder-setup
