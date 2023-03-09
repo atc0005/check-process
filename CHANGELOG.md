@@ -26,6 +26,23 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.2.1] - 2023-03-09
+
+### Overview
+
+- Dependency updates
+- built using Go 1.19.7
+  - Statically linked
+  - Linux (x86, x64)
+
+### Changed
+
+- Dependencies
+  - `Go`
+    - `1.19.6` to `1.19.7`
+  - `atc0005/go-ci` build image
+  - `go-ci-oldstable-build-v0.9.0` to `go-ci-oldstable-build-v0.9.1`
+
 ## [v0.2.0] - 2023-03-07
 
 ### Overview
@@ -140,7 +157,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.2.1...HEAD
+[v0.2.1]: https://github.com/atc0005/check-process/releases/tag/v0.2.1
 [v0.2.0]: https://github.com/atc0005/check-process/releases/tag/v0.2.0
 [v0.1.2]: https://github.com/atc0005/check-process/releases/tag/v0.1.2
 [v0.1.1]: https://github.com/atc0005/check-process/releases/tag/v0.1.1
