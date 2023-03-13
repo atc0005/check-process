@@ -41,7 +41,7 @@ The following types of changes will be recorded in this file:
   - `Go`
     - `1.19.6` to `1.19.7`
   - `atc0005/go-ci` build image
-  - `go-ci-oldstable-build-v0.9.0` to `go-ci-oldstable-build-v0.9.1`
+    - `go-ci-oldstable-build-v0.9.0` to `go-ci-oldstable-build-v0.9.1`
 
 ## [v0.2.0] - 2023-03-07
 
