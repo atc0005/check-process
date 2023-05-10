@@ -15,7 +15,7 @@ import (
 
 // validate verifies all Config struct fields have been provided acceptable
 // values.
-func (c Config) validate(appType AppType) error {
+func (c Config) validate(_ AppType) error {
 
 	// Validate the specified logging level
 	supportedLogLevels := supportedLogLevels()

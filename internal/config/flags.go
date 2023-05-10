@@ -67,10 +67,6 @@ func (c *Config) handleFlagsConfig(appType AppType) error {
 	c.flagSet.Usage = Usage(c.flagSet, os.Stdout)
 
 	// parse flag definitions from the argument list
-	if err := c.flagSet.Parse(os.Args[1:]); err != nil {
-		return err
-	}
-
-	return nil
+	return c.flagSet.Parse(os.Args[1:])
 
 }
