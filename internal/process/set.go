@@ -63,11 +63,7 @@ func (p *Process) setProcessProps() error {
 		return err
 	}
 
-	if err := p.setVMSwapField(); err != nil {
-		return err
-	}
-
-	return nil
+	return p.setVMSwapField()
 }
 
 // setNameField retrieves the process property name value and sets the
