@@ -26,6 +26,41 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.3.0] - 2023-05-11
+
+### Overview
+
+- Build improvements
+- Bug fixes
+- Dependency updates
+- built using Go 1.19.9
+  - Statically linked
+  - Linux (x86, x64)
+
+### Added
+
+- (GH-82) Add rootless container builds via Docker/Podman
+
+### Changed
+
+- Dependencies
+  - `Go`
+    - `1.19.7` to `1.19.9`
+  - `atc0005/go-ci` build image
+    - `go-ci-oldstable-build-v0.9.1` to `go-ci-oldstable-build-v0.10.5`
+  - `rs/zerolog`
+    - `v1.29.0` to `v1.29.1`
+  - `golang.org/x/sys`
+    - `v0.6.0` to `v0.8.0`
+  - `mattn/go-isatty`
+    - `v0.0.17` to `v0.0.18`
+
+### Fixed
+
+- (GH-74) Fix CHANGELOG entry indentation
+- (GH-76) Update vuln analysis GHAW to use on.push hook
+- (GH-90) Fix revive linter errors
+
 ## [v0.2.1] - 2023-03-09
 
 ### Overview
@@ -157,7 +192,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.0...HEAD
+[v0.3.0]: https://github.com/atc0005/check-process/releases/tag/v0.3.0
 [v0.2.1]: https://github.com/atc0005/check-process/releases/tag/v0.2.1
 [v0.2.0]: https://github.com/atc0005/check-process/releases/tag/v0.2.0
 [v0.1.2]: https://github.com/atc0005/check-process/releases/tag/v0.1.2
