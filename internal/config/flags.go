@@ -55,8 +55,11 @@ func (c *Config) handleFlagsConfig(appType AppType) error {
 		supportedValuesFlagHelpText(logLevelFlagHelp, supportedLogLevels()),
 	)
 
-	if appType.Inspector {
+	switch {
+	case appType.Inspector:
 		c.flagSet.BoolVar(&c.InspectorSettings.ShowAll, ShowAllProcessesFlagLong, defaultShowAllProcesses, showAllProcessesFlagHelp)
+	case appType.Plugin:
+		c.flagSet.BoolVar(&c.EmitBranding, BrandingFlag, defaultEmitBranding, brandingFlagHelp)
 	}
 
 	// Allow our function to override the default Help output.
