@@ -17,11 +17,10 @@ const ExitCodeCatchall int = 1
 
 // Shared flag help text
 const (
-	versionFlagHelp      string = "Whether to display application version and then immediately exit application."
-	logLevelFlagHelp     string = "Sets log level."
-	brandingFlagHelp     string = "Toggles emission of branding details with plugin status details. This output is disabled by default."
-	emitBrandingFlagHelp string = "Toggles emission of branding details with plugin status details. This output is disabled by default."
-	helpFlagHelp         string = "Emit this help text"
+	versionFlagHelp  string = "Whether to display application version and then immediately exit application."
+	logLevelFlagHelp string = "Sets log level."
+	brandingFlagHelp string = "Toggles emission of branding details with plugin status details. This output is disabled by default."
+	helpFlagHelp     string = "Emit this help text"
 )
 
 const (
