@@ -14,6 +14,8 @@ Go-based tooling used to monitor processes.
 
 - [Project home](#project-home)
 - [Overview](#overview)
+  - [`check_process`](#check_process)
+    - [Performance Data](#performance-data)
 - [Features](#features)
   - [`check_process` plugin](#check_process-plugin)
   - [`lsps` CLI tool](#lsps-cli-tool)
@@ -27,7 +29,7 @@ Go-based tooling used to monitor processes.
   - [Deployment](#deployment)
 - [Configuration](#configuration)
   - [Command-line arguments](#command-line-arguments)
-    - [`check_process`](#check_process)
+    - [`check_process`](#check_process-1)
     - [`lsps`](#lsps)
 - [Process states](#process-states)
   - [Known states](#known-states)
@@ -57,6 +59,40 @@ This repo is intended to provide various tools used to monitor processes.
 | --------------- | -------------- | --------------------------------------------------------------- |
 | `check_process` | Alpha          | Nagios plugin used to monitor processes for problematic states. |
 | `lsps`          | Alpha          | Small CLI tool to list processes with known problematic states. |
+
+### `check_process`
+
+#### Performance Data
+
+Initial support has been added for emitting Performance Data / Metrics, but
+refinement suggestions are welcome.
+
+Consult the table below for the metrics implemented thus far.
+
+Please add to an existing
+[Discussion](https://github.com/atc0005/check-ssh/discussions) thread
+(if applicable) or [open a new
+one](https://github.com/atc0005/check-ssh/discussions/new) with any
+feedback that you may have. Thanks in advance!
+
+| Emitted Performance Data / Metric | Meaning                                          |
+| --------------------------------- | ------------------------------------------------ |
+| `time`                            | Runtime for plugin                               |
+| `problem_processes`               | Number of overall "problem" processes            |
+| `running`                         | Number of running processes                      |
+| `sleeping`                        | Number of sleeping processes                     |
+| `uninterruptible_disk_sleep`      | Number of (uninterruptible) disk sleep processes |
+| `stopped`                         | Number of sleeping processes                     |
+| `zombie`                          | Number of zombie processes                       |
+| `dead`                            | Number of dead processes                         |
+| `tracing_stop`                    | Number of tracing stop processes                 |
+| `wakekill`                        | Number of wakekill processes                     |
+| `waking`                          | Number of waking processes                       |
+| `idle`                            | Number of idle processes                         |
+| `parked`                          | Number of parked processes                       |
+
+**NOTE**: Not all process types are available for all kernel versions. Consult
+the [Known states](#known-states) section for more information.
 
 ## Features
 
