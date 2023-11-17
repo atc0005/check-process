@@ -26,6 +26,34 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.3.4] - 2023-11-17
+
+### Changed
+
+#### Dependency Updates
+
+- (GH-189) canary: bump golang from 1.20.10 to 1.20.11 in /dependabot/docker/go
+- (GH-156) canary: bump golang from 1.20.7 to 1.20.8 in /dependabot/docker/go
+- (GH-178) canary: bump golang from 1.20.8 to 1.20.10 in /dependabot/docker/go
+- (GH-181) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.13.10 to go-ci-oldstable-build-v0.13.12 in /dependabot/docker/builds
+- (GH-192) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.13.12 to go-ci-oldstable-build-v0.14.1 in /dependabot/docker/builds
+- (GH-146) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.13.4 to go-ci-oldstable-build-v0.13.5 in /dependabot/docker/builds
+- (GH-148) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.13.5 to go-ci-oldstable-build-v0.13.6 in /dependabot/docker/builds
+- (GH-151) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.13.6 to go-ci-oldstable-build-v0.13.7 in /dependabot/docker/builds
+- (GH-158) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.13.7 to go-ci-oldstable-build-v0.13.8 in /dependabot/docker/builds
+- (GH-163) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.13.8 to go-ci-oldstable-build-v0.13.9 in /dependabot/docker/builds
+- (GH-167) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.13.9 to go-ci-oldstable-build-v0.13.10 in /dependabot/docker/builds
+- (GH-154) ghaw: bump actions/checkout from 3 to 4
+- (GH-183) go.mod: bump github.com/mattn/go-isatty from 0.0.19 to 0.0.20
+- (GH-171) go.mod: bump github.com/rs/zerolog from 1.30.0 to 1.31.0
+- (GH-152) go.mod: bump golang.org/x/sys from 0.11.0 to 0.12.0
+- (GH-175) go.mod: bump golang.org/x/sys from 0.12.0 to 0.13.0
+- (GH-187) go.mod: bump golang.org/x/sys from 0.13.0 to 0.14.0
+
+### Fixed
+
+- (GH-194) Fix goconst linting errors
+
 ## [v0.3.3] - 2023-08-17
 
 ### Added
@@ -275,7 +303,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.3...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.4...HEAD
+[v0.3.4]: https://github.com/atc0005/check-process/releases/tag/v0.3.4
 [v0.3.3]: https://github.com/atc0005/check-process/releases/tag/v0.3.3
 [v0.3.2]: https://github.com/atc0005/check-process/releases/tag/v0.3.2
 [v0.3.1]: https://github.com/atc0005/check-process/releases/tag/v0.3.1
