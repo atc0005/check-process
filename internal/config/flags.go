@@ -37,7 +37,7 @@ func (c *Config) handleFlagsConfig(appType AppType) error {
 	}
 
 	// shared flags
-	c.flagSet.BoolVar(&c.ShowHelp, HelpFlagShort, defaultHelp, helpFlagHelp+" (shorthand)")
+	c.flagSet.BoolVar(&c.ShowHelp, HelpFlagShort, defaultHelp, helpFlagHelp+shorthandFlagSuffix)
 	c.flagSet.BoolVar(&c.ShowHelp, HelpFlagLong, defaultHelp, helpFlagHelp)
 
 	c.flagSet.BoolVar(&c.ShowVersion, VersionFlagLong, defaultDisplayVersionAndExit, versionFlagHelp)
@@ -46,7 +46,7 @@ func (c *Config) handleFlagsConfig(appType AppType) error {
 		&c.LoggingLevel,
 		LogLevelFlagShort,
 		defaultLogLevel,
-		supportedValuesFlagHelpText(logLevelFlagHelp, supportedLogLevels())+" (shorthand)",
+		supportedValuesFlagHelpText(logLevelFlagHelp, supportedLogLevels())+shorthandFlagSuffix,
 	)
 	c.flagSet.StringVar(
 		&c.LoggingLevel,
