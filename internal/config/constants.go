@@ -27,6 +27,10 @@ const (
 	showAllProcessesFlagHelp string = "Toggles listing of all processes. WARNING: This may produce a LOT of output. Disabled by default."
 )
 
+// shorthandFlagSuffix is appended to short flag help text to emphasize that
+// the flag is a shorthand version of a longer flag.
+const shorthandFlagSuffix = " (shorthand)"
+
 // Flag names for consistent references. Exported so that they're available
 // from tests.
 const (
