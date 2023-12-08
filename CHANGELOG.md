@@ -26,6 +26,16 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.3.5] - 2023-12-08
+
+### Changed
+
+#### Dependency Updates
+
+- (GH-201) canary: bump golang from 1.20.11 to 1.20.12 in /dependabot/docker/go
+- (GH-203) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.14.1 to go-ci-oldstable-build-v0.14.2 in /dependabot/docker/builds
+- (GH-199) go.mod: bump golang.org/x/sys from 0.14.0 to 0.15.0
+
 ## [v0.3.4] - 2023-11-17
 
 ### Changed
@@ -303,7 +313,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.4...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.5...HEAD
+[v0.3.5]: https://github.com/atc0005/check-process/releases/tag/v0.3.5
 [v0.3.4]: https://github.com/atc0005/check-process/releases/tag/v0.3.4
 [v0.3.3]: https://github.com/atc0005/check-process/releases/tag/v0.3.3
 [v0.3.2]: https://github.com/atc0005/check-process/releases/tag/v0.3.2
