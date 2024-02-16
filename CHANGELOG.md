@@ -26,6 +26,22 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.3.7] - 2024-02-16
+
+### Changed
+
+#### Dependency Updates
+
+- (GH-233) canary: bump golang from 1.20.13 to 1.20.14 in /dependabot/docker/go
+- (GH-217) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.14.3 to go-ci-oldstable-build-v0.14.4 in /dependabot/docker/builds
+- (GH-220) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.14.4 to go-ci-oldstable-build-v0.14.5 in /dependabot/docker/builds
+- (GH-224) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.14.5 to go-ci-oldstable-build-v0.14.6 in /dependabot/docker/builds
+- (GH-237) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.14.6 to go-ci-oldstable-build-v0.14.9 in /dependabot/docker/builds
+- (GH-240) docker: bump atc0005/go-ci from go-ci-oldstable-build-v0.14.9 to go-ci-oldstable-build-v0.15.0 in /dependabot/docker/builds
+- (GH-221) go.mod: bump github.com/atc0005/go-nagios from 0.16.0 to 0.16.1
+- (GH-226) go.mod: bump github.com/rs/zerolog from 1.31.0 to 1.32.0
+- (GH-235) go.mod: bump golang.org/x/sys from 0.16.0 to 0.17.0
+
 ## [v0.3.6] - 2024-01-19
 
 ### Changed
@@ -324,7 +340,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.6...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.7...HEAD
+[v0.3.7]: https://github.com/atc0005/check-process/releases/tag/v0.3.7
 [v0.3.6]: https://github.com/atc0005/check-process/releases/tag/v0.3.6
 [v0.3.5]: https://github.com/atc0005/check-process/releases/tag/v0.3.5
 [v0.3.4]: https://github.com/atc0005/check-process/releases/tag/v0.3.4
