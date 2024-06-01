@@ -61,11 +61,11 @@ func CheckProcessOneLineSummary(processes process.Processes) string {
 // plugin report.
 func writeReportHeader(w io.Writer, processes process.Processes) {
 
-	fmt.Fprintf(w, "Process Summary:%[1]s%[1]s", nagios.CheckOutputEOL)
+	_, _ = fmt.Fprintf(w, "Process Summary:%[1]s%[1]s", nagios.CheckOutputEOL)
 	for _, item := range processes.SummaryList() {
-		fmt.Fprintf(w, "  - %s\n", item)
+		_, _ = fmt.Fprintf(w, "  - %s\n", item)
 	}
-	fmt.Fprintf(w, "%[1]s%[1]s", nagios.CheckOutputEOL)
+	_, _ = fmt.Fprintf(w, "%[1]s%[1]s", nagios.CheckOutputEOL)
 
 }
 
@@ -75,7 +75,7 @@ func writeReportProblemEntries(w io.Writer, processes process.Processes) {
 
 	probProcs := processes.States(process.KnownProblemProcessStates())
 
-	fmt.Fprintf(w, "%[1]sProblems:%[1]s", nagios.CheckOutputEOL)
+	_, _ = fmt.Fprintf(w, "%[1]sProblems:%[1]s", nagios.CheckOutputEOL)
 
 	switch {
 	case len(probProcs) > 0:
@@ -88,7 +88,7 @@ func writeReportProblemEntries(w io.Writer, processes process.Processes) {
 				ppID = -1
 			}
 
-			fmt.Fprintf(
+			_, _ = fmt.Fprintf(
 				w,
 				// "Name: %s\n\tParent: %v (%v)\n\tState: %v\n\tPid: %v\n\tPPid: %v\n\tThreads: %v\n\n",
 				"  - Name: %10s [Parent: %v (%v), State: %v, Pid: %v, PPid: %v, Threads: %v]%s",
@@ -103,7 +103,7 @@ func writeReportProblemEntries(w io.Writer, processes process.Processes) {
 			)
 		}
 	default:
-		fmt.Fprintf(w, "%[1]s  - None%[1]s", nagios.CheckOutputEOL)
+		_, _ = fmt.Fprintf(w, "%[1]s  - None%[1]s", nagios.CheckOutputEOL)
 	}
 
 }
@@ -115,7 +115,7 @@ func CheckProcessReport(processes process.Processes) string {
 
 	writeReportHeader(&report, processes)
 
-	fmt.Fprintf(
+	_, _ = fmt.Fprintf(
 		&report,
 		"%[2]s%[1]s%[1]s",
 		nagios.CheckOutputEOL,

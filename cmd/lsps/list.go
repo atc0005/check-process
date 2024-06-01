@@ -25,14 +25,14 @@ func listProcesses(w io.Writer, processes process.Processes) {
 			writeProcessInfoLine(w, p, processes, true)
 		}
 
-		fmt.Fprintf(w, "\nSummary:\n\n")
+		_, _ = fmt.Fprintf(w, "\nSummary:\n\n")
 		for _, item := range processes.SummaryList() {
-			fmt.Fprintf(w, "  - %s\n", item)
+			_, _ = fmt.Fprintf(w, "  - %s\n", item)
 		}
-		fmt.Fprintln(w)
+		_, _ = fmt.Fprintln(w)
 
 	default:
-		fmt.Fprintf(w, "\n  - None\n")
+		_, _ = fmt.Fprintf(w, "\n  - None\n")
 	}
 
 }
@@ -48,16 +48,16 @@ func listOtherProcesses(w io.Writer, evaluated process.Processes, all process.Pr
 		return
 	}
 
-	fmt.Fprintf(w, "\nSUMMARY:\n\n")
+	_, _ = fmt.Fprintf(w, "\nSUMMARY:\n\n")
 	for _, item := range remaining.SummaryList() {
-		fmt.Fprintf(w, "  - %s\n", item)
+		_, _ = fmt.Fprintf(w, "  - %s\n", item)
 	}
-	fmt.Fprintln(w)
+	_, _ = fmt.Fprintln(w)
 
 	if includeDetails {
 		fmt.Printf("\n%s\n\n", strings.Repeat("-", 50))
 
-		fmt.Fprintf(w, "\nDETAILS:\n")
+		_, _ = fmt.Fprintf(w, "\nDETAILS:\n")
 
 		// for _, p := range remaining {
 		// 	writeProcessInfoLine(w, p, remaining)
@@ -72,7 +72,7 @@ func listOtherProcesses(w io.Writer, evaluated process.Processes, all process.Pr
 
 		// Write out the state as a header, emit the processes for that state.
 		for state, ps := range stateIndex {
-			fmt.Fprintf(w, "\n%s\n", state)
+			_, _ = fmt.Fprintf(w, "\n%s\n", state)
 			for _, p := range ps {
 				writeProcessInfoLine(w, p, remaining, false)
 			}
@@ -96,7 +96,7 @@ func writeProcessInfoLine(w io.Writer, p process.Process, ps process.Processes, 
 	switch includeStateField {
 	case true:
 		lineTmpl := "  - Name: %10s [Parent: %v (%v), State: %v, Pid: %v, PPid: %v, VMSwap: %v, Threads: %v]\n"
-		fmt.Fprintf(
+		_, _ = fmt.Fprintf(
 			w,
 			lineTmpl,
 			p.Name,
@@ -110,7 +110,7 @@ func writeProcessInfoLine(w io.Writer, p process.Process, ps process.Processes, 
 		)
 	default:
 		lineTmpl := "  - Name: %10s [Parent: %v (%v), Pid: %v, PPid: %v, VMSwap: %v, Threads: %v]\n"
-		fmt.Fprintf(
+		_, _ = fmt.Fprintf(
 			w,
 			lineTmpl,
 			p.Name,
