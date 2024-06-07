@@ -26,6 +26,24 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.3.11] - 2024-06-07
+
+### Changed
+
+#### Dependency Updates
+
+- (GH-296) Go Dependency: Bump github.com/rs/zerolog from 1.32.0 to 1.33.0
+- (GH-294) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.20.4 to go-ci-oldstable-build-v0.20.5 in /dependabot/docker/builds
+- (GH-298) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.20.5 to go-ci-oldstable-build-v0.20.6 in /dependabot/docker/builds
+- (GH-303) Go Dependency: Bump golang.org/x/sys from 0.20.0 to 0.21.0
+- (GH-308) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.20.6 to go-ci-oldstable-build-v0.20.7 in /dependabot/docker/builds
+- (GH-305) Go Runtime: Bump golang from 1.21.10 to 1.21.11 in /dependabot/docker/go
+
+### Fixed
+
+- (GH-300) Remove inactive maligned linter
+- (GH-301) Fix errcheck linting errors
+
 ## [v0.3.10] - 2024-05-11
 
 ### Changed
@@ -383,7 +401,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.10...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.11...HEAD
+[v0.3.11]: https://github.com/atc0005/check-process/releases/tag/v0.3.11
 [v0.3.10]: https://github.com/atc0005/check-process/releases/tag/v0.3.10
 [v0.3.9]: https://github.com/atc0005/check-process/releases/tag/v0.3.9
 [v0.3.8]: https://github.com/atc0005/check-process/releases/tag/v0.3.8
