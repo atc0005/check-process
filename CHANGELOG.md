@@ -26,6 +26,24 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.3.13] - 2024-08-13
+
+### Changed
+
+#### Dependency Updates
+
+- (GH-330) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.21.4 to go-ci-oldstable-build-v0.21.5 in /dependabot/docker/builds
+- (GH-333) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.21.5 to go-ci-oldstable-build-v0.21.6 in /dependabot/docker/builds
+- (GH-337) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.21.6 to go-ci-oldstable-build-v0.21.7 in /dependabot/docker/builds
+- (GH-343) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.21.7 to go-ci-oldstable-build-v0.21.8 in /dependabot/docker/builds
+- (GH-340) Go Dependency: Bump golang.org/x/sys from 0.22.0 to 0.23.0
+- (GH-346) Go Dependency: Bump golang.org/x/sys from 0.23.0 to 0.24.0
+- (GH-342) Go Runtime: Bump golang from 1.21.12 to 1.21.13 in /dependabot/docker/go
+
+#### Other
+
+- (GH-338) Push `REPO_VERSION` var into containers for builds
+
 ## [v0.3.12] - 2024-07-10
 
 ### Changed
@@ -414,7 +432,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.12...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.13...HEAD
+[v0.3.13]: https://github.com/atc0005/check-process/releases/tag/v0.3.13
 [v0.3.12]: https://github.com/atc0005/check-process/releases/tag/v0.3.12
 [v0.3.11]: https://github.com/atc0005/check-process/releases/tag/v0.3.11
 [v0.3.10]: https://github.com/atc0005/check-process/releases/tag/v0.3.10
