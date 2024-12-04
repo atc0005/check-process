@@ -3,7 +3,7 @@ module github.com/atc0005/check-process
 go 1.19
 
 require (
-	github.com/atc0005/go-nagios v0.18.1
+	github.com/atc0005/go-nagios v0.19.0
 	github.com/rs/zerolog v1.33.0
 )
 
