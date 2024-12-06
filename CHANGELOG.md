@@ -26,6 +26,21 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.3.16] - 2024-12-06
+
+### Changed
+
+#### Dependency Updates
+
+- (GH-393) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.21.15 to go-ci-oldstable-build-v0.21.16 in /dependabot/docker/builds
+- (GH-402) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.21.16 to go-ci-oldstable-build-v0.21.17 in /dependabot/docker/builds
+- (GH-406) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.21.17 to go-ci-oldstable-build-v0.21.18 in /dependabot/docker/builds
+- (GH-395) Go Dependency: Bump github.com/atc0005/go-nagios from 0.17.1 to 0.18.0
+- (GH-397) Go Dependency: Bump github.com/atc0005/go-nagios from 0.18.0 to 0.18.1
+- (GH-400) Go Dependency: Bump github.com/atc0005/go-nagios from 0.18.1 to 0.19.0
+- (GH-407) Go Dependency: Bump golang.org/x/sys from 0.27.0 to 0.28.0
+- (GH-403) Go Runtime: Bump golang from 1.22.9 to 1.22.10 in /dependabot/docker/go
+
 ## [v0.3.15] - 2024-11-13
 
 ### Changed
@@ -457,7 +472,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.15...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.16...HEAD
+[v0.3.16]: https://github.com/atc0005/check-process/releases/tag/v0.3.16
 [v0.3.15]: https://github.com/atc0005/check-process/releases/tag/v0.3.15
 [v0.3.14]: https://github.com/atc0005/check-process/releases/tag/v0.3.14
 [v0.3.13]: https://github.com/atc0005/check-process/releases/tag/v0.3.13
