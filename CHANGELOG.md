@@ -26,6 +26,27 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.3.17] - 2025-04-16
+
+### Changed
+
+#### Dependency Updates
+
+- (GH-455) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.21.18 to go-ci-oldstable-build-v0.22.8 in /dependabot/docker/builds
+- (GH-460) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.22.8 to go-ci-oldstable-build-v0.22.9 in /dependabot/docker/builds
+- (GH-462) Disable Dependabot automatic PR rebasing
+- (GH-417) Go Dependency: Bump github.com/mattn/go-colorable from 0.1.13 to 0.1.14
+- (GH-453) Go Dependency: Bump github.com/rs/zerolog from 1.33.0 to 1.34.0
+- (GH-445) Go Dependency: Bump golang.org/x/sys from 0.28.0 to 0.31.0
+- (GH-465) Go Dependency: Bump golang.org/x/sys from 0.31.0 to 0.32.0
+- (GH-457) Go Runtime: Bump golang from 1.22.10 to 1.23.8 in /dependabot/docker/go
+- (GH-449) go.mod: update minimum Go version to 1.23.0
+- (GH-438) Update project to Go 1.23 series
+
+### Fixed
+
+- (GH-459) Fix invalid Dependabot go.mod changes
+
 ## [v0.3.16] - 2024-12-06
 
 ### Changed
@@ -472,7 +493,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.16...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.17...HEAD
+[v0.3.17]: https://github.com/atc0005/check-process/releases/tag/v0.3.17
 [v0.3.16]: https://github.com/atc0005/check-process/releases/tag/v0.3.16
 [v0.3.15]: https://github.com/atc0005/check-process/releases/tag/v0.3.15
 [v0.3.14]: https://github.com/atc0005/check-process/releases/tag/v0.3.14
