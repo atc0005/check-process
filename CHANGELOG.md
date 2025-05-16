@@ -26,6 +26,17 @@ The following types of changes will be recorded in this file:
 
 - placeholder
 
+## [v0.3.18] - 2025-05-16
+
+### Changed
+
+#### Dependency Updates
+
+- (GH-476) Build Image: Bump atc0005/go-ci from go-ci-oldstable-build-v0.22.9 to go-ci-oldstable-build-v0.22.10 in /dependabot/docker/builds
+- (GH-469) Go Dependency: Bump github.com/atc0005/go-nagios from 0.19.0 to 0.20.0
+- (GH-471) Go Dependency: Bump golang.org/x/sys from 0.32.0 to 0.33.0
+- (GH-473) Go Runtime: Bump golang from 1.23.8 to 1.23.9 in /dependabot/docker/go
+
 ## [v0.3.17] - 2025-04-16
 
 ### Changed
@@ -493,7 +504,8 @@ processes on Linux distros:
 
 See the project README for additional details.
 
-[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.17...HEAD
+[Unreleased]: https://github.com/atc0005/check-process/compare/v0.3.18...HEAD
+[v0.3.18]: https://github.com/atc0005/check-process/releases/tag/v0.3.18
 [v0.3.17]: https://github.com/atc0005/check-process/releases/tag/v0.3.17
 [v0.3.16]: https://github.com/atc0005/check-process/releases/tag/v0.3.16
 [v0.3.15]: https://github.com/atc0005/check-process/releases/tag/v0.3.15
